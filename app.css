@@ -1,0 +1,90 @@
+.interactive-video-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.interactive-video-wrapper video {
+    display: block;
+    width: 100%;
+}
+
+.video-controls {
+    background: black;
+    height: 48px;
+    color: white;
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+}
+
+.controls-left,
+.controls-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.control-play,
+.control-volume,
+.control-speed,
+.control-fullscreen {
+    height: 100%;
+}
+
+.controls-center {
+    display: grid;
+    grid-template-columns: 1fr 75px;
+}
+
+.video-panel {
+    position: absolute;
+    bottom: 56px;
+    right: 8px;
+    width: 255px;
+    visibility: hidden;
+    background-color: #000000;
+    opacity: 0.7;
+}
+
+.video-panel.active {
+    visibility: visible;
+}
+
+.panel-title {
+    padding: .5rem;
+    color: #ffffff;
+}
+
+.panel-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-body .panel-speed {
+    position: relative;
+    padding: .5rem .5rem .5rem 1.5rem;
+    text-align: left;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.panel-body .panel-speed:hover {
+    background-color: #e1e1e1;
+    color: #000000;
+}
+
+.panel-body .panel-speed.selected::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: .5rem;
+    top: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    background-color: green;
+    border-radius: 50%;
+}
